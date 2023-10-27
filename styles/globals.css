@@ -22,3 +22,8 @@ a {
   font-family: "bebas";
   src: url("../public/BebasNeue-Regular.ttf");
 }
+
+.relative:hover .opacity-0 {
+  opacity: 1;
+}
+

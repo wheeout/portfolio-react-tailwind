@@ -6,10 +6,24 @@ import {
 } from "react-icons/ai";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useState } from "react";
+import { isMobile } from 'react-device-detect';
 import render from "../public/render-webdev.png";
 import codingfolder from "../public/coding-folder.png";
 import design from "../public/design.png";
 import syntaxfolder from "../public/syntax-folder.png";
+import html from "../public/html-5-svgrepo-com.png";
+import css from "../public/css-3-svgrepo-com.png";
+import javascript from "../public/javascript-svgrepo-com.png";
+import python from "../public/python-svgrepo-com.png";
+import node from "../public/node-js-svgrepo-com.png";
+import sql from "../public/sql-database-sql-azure-svgrepo-com.png";
+import csharp from "../public/c--4.png";
+import php from "../public/php-svgrepo-com.png";
+import react from "../public/react-svgrepo-com.png";
+import flutter from "/public/flutter-svgrepo-com.png";
+import laravel from "../public/laravel-svgrepo-com.png";
+import photoshop from "../public/photoshop-cc-logo-svgrepo-com.png";
+import figma from "../public/figma-svgrepo-com.png";
 import Image from "next/image";
 import web1 from "../public/web1.png";
 import web2 from "../public/web2.png";
@@ -20,6 +34,7 @@ import web6 from "../public/web6.png";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
+  const hoverClass = isMobile ? 'group-tap' : 'group-hover';
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -65,7 +80,7 @@ export default function Home() {
               <AiFillLinkedin />
               <AiFillYoutube />
             </div>
-            <div className="mx-auto h-80 w-96 relative overflow-hidden mt-20 md:h-80 md:w-96">
+            <div className="mx-auto h-44 w-56 relative overflow-hidden mt-20 md:h-80 md:w-96">
               <Image src={render} layout="fill" objectFit="cover" alt="" />
             </div>
           </div>
@@ -87,70 +102,183 @@ export default function Home() {
                 <div className="flex justify-center">
                   <Image src={codingfolder} width={100} height={100} alt="" />
                 </div>
-                <h3 className="text-lg font-extrabold pt-8 pb-2 ">LANGUAGES</h3>
-                <p className="font-medium italic text-gray-800 py-1">HTML5</p>
-                <p className="text-gray-800">
-                  Proficient in creating structured and semantically meaningful
-                  web pages.
-                </p>
-                <p className="font-medium italic text-gray-800 py-1">CSS</p>
-                <p className="text-gray-800">
-                  Skilled in styling and layout techniques for elegant and
-                  responsive design.
-                </p>
-                <p className="font-medium italic text-gray-800 py-1">
-                  JavaScript
-                </p>
-                <p className="text-gray-800">
-                  Strong grasp of both vanilla JS and modern ES6+ syntax for
-                  dynamic and interactive web applications.
-                </p>
-                <p className="font-medium italic text-gray-800 py-1">Python</p>
-                <p className="text-gray-800">
-                  Experienced in building versatile applications and backend
-                  services.
-                </p>
-                <p className="font-medium italic text-gray-800 py-1">Node.js</p>
-                <p className="text-gray-800">
-                  Proficient in server-side development and creating scalable
-                  applications.
-                </p>
-                <p className="font-medium italic text-gray-800 py-1">SQL</p>
-                <p className="text-gray-800">
-                  Competent in database management and complex query
-                  optimization.
-                </p>
-                <p className="font-medium italic text-gray-800 py-1">C#</p>
-                <p className="text-gray-800">
-                  Extensive experience in desktop application development and
-                  WPF frameworks.
-                </p>
-                <p className="font-medium italic text-gray-800 py-1">PHP</p>
-                <p className="text-gray-800">
-                  Basic understanding for backend development.
-                </p>
+                <h3 className="text-lg font-extrabold pt-2 pb-8 ">LANGUAGES</h3>
+                <div className="flex flex-row justify-center gap-2">
+                  <div className={`relative group ${hoverClass}`}>
+                    <Image
+                      src={html}
+                      width={35}
+                      height={35}
+                      alt=""
+                      className="filter grayscale transition duration-500 ease-in-out transform group-hover:filter-none"
+                    />
+                    <div className="absolute text-center opacity-0 group-hover:opacity-100 bg-white px-3 py-4 w-24 md:w-56 px-10 py-10 rounded shadow-lg">
+                      <p className="text-gray-800 text-xs md:text-sm">
+                        Proficient in creating structured and semantically
+                        meaningful web pages.
+                      </p>
+                    </div>
+                  </div>
+                  <div className={`relative group ${hoverClass}`}>
+                    <Image
+                      src={css}
+                      width={35}
+                      height={35}
+                      alt=""
+                      className="filter grayscale transition duration-500 ease-in-out transform group-hover:filter-none"
+                    />
+                    <div className="absolute text-center opacity-0 group-hover:opacity-100 bg-white px-3 py-4 w-24 md:w-56 px-10 py-10 rounded shadow-lg">
+                      <p className="text-gray-800 text-xs md:text-sm">
+                        Skilled in styling and layout techniques for elegant and
+                        responsive design.
+                      </p>
+                    </div>
+                  </div>
+                  <div className={`relative group ${hoverClass}`}>
+                    <Image
+                      src={javascript}
+                      width={35}
+                      height={35}
+                      alt=""
+                      className="filter grayscale transition duration-500 ease-in-out transform group-hover:filter-none"
+                    />
+                    <div className="absolute text-center opacity-0 group-hover:opacity-100 bg-white px-3 py-4 w-24 md:w-56 px-10 py-10 rounded shadow-lg">
+                      <p className="text-gray-800 text-xs md:text-sm">
+                        Strong grasp of both vanilla JS and modern ES6+ syntax
+                        for dynamic and interactive web applications.
+                      </p>
+                    </div>
+                  </div>
+                  <div className={`relative group ${hoverClass}`}>
+                    <Image
+                      src={python}
+                      width={35}
+                      height={35}
+                      alt=""
+                      className="filter grayscale transition duration-500 ease-in-out transform group-hover:filter-none"
+                    />
+                    <div className="absolute text-center opacity-0 group-hover:opacity-100 bg-white px-3 py-4 w-24 md:w-56 px-10 py-10 rounded shadow-lg">
+                      <p className="text-gray-800 text-xs md:text-sm">
+                        Experienced in building versatile applications and
+                        backend services.
+                      </p>
+                    </div>
+                  </div>
+                  <div className={`relative group ${hoverClass}`}>
+                    <Image
+                      src={node}
+                      width={35}
+                      height={35}
+                      alt=""
+                      className="filter grayscale transition duration-500 ease-in-out transform group-hover:filter-none"
+                    />
+                    <div className="absolute text-center opacity-0 group-hover:opacity-100 bg-white px-3 py-4 w-24 md:w-56 px-10 py-10 rounded shadow-lg">
+                      <p className="text-gray-800 text-xs md:text-sm">
+                        Proficient in server-side development and creating
+                        scalable applications.
+                      </p>
+                    </div>
+                  </div>
+                  <div className={`relative group ${hoverClass}`}>
+                    <Image
+                      src={sql}
+                      width={35}
+                      height={35}
+                      alt=""
+                      className="filter grayscale transition duration-500 ease-in-out transform group-hover:filter-none"
+                    />
+                    <div className="absolute text-center opacity-0 group-hover:opacity-100 bg-white px-3 py-4 w-24 md:w-56 px-10 py-10 rounded shadow-lg">
+                      <p className="text-gray-800 text-xs md:text-sm">
+                        Competent in database management and complex query
+                        optimization.
+                      </p>
+                    </div>
+                  </div>
+                  <div className={`relative group ${hoverClass}`}>
+                    <Image
+                      src={csharp}
+                      width={35}
+                      height={35}
+                      alt=""
+                      className="filter grayscale transition duration-500 ease-in-out transform group-hover:filter-none"
+                    />
+                    <div className="absolute text-center opacity-0 group-hover:opacity-100 bg-white px-3 py-4 w-24 md:w-56 px-10 py-10 rounded shadow-lg">
+                      <p className="text-gray-800 text-xs md:text-sm">
+                        Extensive experience in desktop application development
+                        and WPF frameworks.
+                      </p>
+                    </div>
+                  </div>
+                  <div className={`relative group ${hoverClass}`}>
+                    <Image
+                      src={php}
+                      width={35}
+                      height={35}
+                      alt=""
+                      className="filter grayscale transition duration-500 ease-in-out transform group-hover:filter-none"
+                    />
+                    <div className="absolute text-center opacity-0 group-hover:opacity-100 bg-white px-3 py-4 w-24 md:w-56 px-10 py-10 rounded shadow-lg">
+                      <p className="text-gray-800 text-xs md:text-sm">
+                        Basic understanding for backend development.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="text-center bg-gray-50 shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
                 <div className="flex justify-center">
                   <Image src={syntaxfolder} width={100} height={100} alt="" />
                 </div>
-                <h3 className="text-lg font-extrabold pt-8 pb-2 ">
+                <h3 className="text-lg font-extrabold pt-2 pb-8 ">
                   FRAMEWORKS
                 </h3>
-                <p className="font-medium italic text-gray-800 py-1">React</p>
-                <p className="text-gray-800">
-                  Proficient in creating dynamic and efficient user interfaces.
-                </p>
-                <p className="font-medium italic text-gray-800 py-1">Flutter</p>
-                <p className="text-gray-800">
-                  Capable of building cross-platform mobile applications with
-                  native performance.
-                </p>
-                <p className="font-medium italic text-gray-800 py-1">Laravel</p>
-                <p className="text-gray-800">
-                  Base knowledge for creating robust and scalable web
-                  applications.
-                </p>
+                <div className="flex flex-row justify-center gap-2">
+                  <div className={`relative group ${hoverClass}`}>
+                    <Image
+                      src={react}
+                      width={35}
+                      height={35}
+                      alt=""
+                      className="filter grayscale transition duration-500 ease-in-out transform group-hover:filter-none"
+                    />
+                    <div className="absolute text-center opacity-0 group-hover:opacity-100 bg-white px-3 py-4 w-24 md:w-56 px-10 py-10 rounded shadow-lg">
+                      <p className="text-gray-800 text-xs md:text-sm">
+                        Proficient in creating dynamic and efficient user
+                        interfaces.
+                      </p>
+                    </div>
+                  </div>
+                  <div className={`relative group ${hoverClass}`}>
+                    <Image
+                      src={flutter}
+                      width={35}
+                      height={35}
+                      alt=""
+                      className="filter grayscale transition duration-500 ease-in-out transform group-hover:filter-none"
+                    />
+                    <div className="absolute text-center opacity-0 group-hover:opacity-100 bg-white px-3 py-4 w-24 md:w-56 px-10 py-10 rounded shadow-lg">
+                      <p className="text-gray-800 text-xs md:text-sm">
+                        Capable of building cross-platform mobile applications
+                        with native performance.
+                      </p>
+                    </div>
+                  </div>
+                  <div className={`relative group ${hoverClass}`}>
+                    <Image
+                      src={laravel}
+                      width={35}
+                      height={35}
+                      alt=""
+                      className="filter grayscale transition duration-500 ease-in-out transform group-tap group-hover:filter-none"
+                    />
+                    <div className="absolute text-center opacity-0 group-hover:opacity-100 bg-white px-3 py-4 w-24 md:w-56 px-10 py-10 rounded shadow-lg">
+                      <p className="text-gray-800 text-xs md:text-sm">
+                        Base knowledge for creating robust and scalable web
+                        applications.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="text-center bg-gray-50 shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
@@ -167,8 +295,22 @@ export default function Home() {
               <h4 className="py-4 font-bold text-fuchsia-700">
                 Design Tools I Use
               </h4>
-              <p className="text-gray-800 py-1">Photoshop</p>
-              <p className="text-gray-800 py-1">Figma</p>
+              <div className="flex flex-row justify-center gap-2">
+                <Image
+                  src={photoshop}
+                  width={35}
+                  height={35}
+                  alt=""
+                  className="filter grayscale transition duration-500 ease-in-out transform hover:filter-none"
+                />
+                <Image
+                  src={figma}
+                  width={35}
+                  height={35}
+                  alt=""
+                  className="filter grayscale transition duration-500 ease-in-out transform hover:filter-none"
+                />
+              </div>
             </div>
           </div>
         </section>
