@@ -1,12 +1,8 @@
 import Head from "next/head";
-import {
-  AiFillTwitterCircle,
-  AiFillLinkedin,
-  AiFillYoutube,
-} from "react-icons/ai";
+import { AiFillLinkedin } from "react-icons/ai";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useState } from "react";
-import { isMobile } from 'react-device-detect';
+import { isMobile } from "react-device-detect";
 import render from "../public/render-webdev.png";
 import codingfolder from "../public/coding-folder.png";
 import design from "../public/design.png";
@@ -25,7 +21,7 @@ import laravel from "../public/laravel-svgrepo-com.png";
 import photoshop from "../public/photoshop-cc-logo-svgrepo-com.png";
 import figma from "../public/figma-svgrepo-com.png";
 import Image from "next/image";
-import GitHubRepoWidget from './githubRepoWidget';
+import GitHubRepoWidget from "./githubRepoWidget";
 import web1 from "../public/web1.png";
 import web2 from "../public/web2.png";
 import web3 from "../public/web3.png";
@@ -35,7 +31,19 @@ import web6 from "../public/web6.png";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
-  const hoverClass = isMobile ? 'group-tap' : 'group-hover';
+  const hoverClass = isMobile ? "group-tap" : "group-hover";
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href =
+      "/https://drive.google.com/uc?export=download&id=1Jcc07tucfy5ymctEYuEjy6rXDdmmIY9E";
+    link.download = "Curriculum Mia - 2023 (English).pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+  const linkedinLink = () => {
+    window.open("https://www.linkedin.com/", "_blank");
+  };
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -57,8 +65,8 @@ export default function Home() {
               </li>
               <li>
                 <a
-                  className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 font-semibold text-white px-4 py-2 border-none rounded-md ml-8"
-                  href="#"
+                  className="cursor-pointer bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 font-semibold text-white px-4 py-2 border-none rounded-md ml-8"
+                  onClick={handleDownload}
                 >
                   Resume
                 </a>
@@ -77,9 +85,9 @@ export default function Home() {
               comprehensive applications that deliver seamless user experiences.
             </p>
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
-              <AiFillTwitterCircle />
-              <AiFillLinkedin />
-              <AiFillYoutube />
+              <span onClick={linkedinLink}>
+                <AiFillLinkedin className="cursor-pointer" />
+              </span>
             </div>
             <div className="mx-auto h-44 w-56 relative overflow-hidden mt-20 md:h-80 md:w-96">
               <Image src={render} layout="fill" objectFit="cover" alt="" />
@@ -90,10 +98,10 @@ export default function Home() {
         <section>
           <div className="bg-white shadow-lg p-10 rounded-xl my-10 dark:bg-white">
             <div>
-              <h3 className="flex justify-center gap-16 py-3 text-4xl font-extrabold py-1 dark:text-white ">
+              <h3 className="flex justify-center gap-16 py-3 text-4xl font-extrabold py-1 dark:text-gray-800 ">
                 KNOWLEDGE
               </h3>
-              <p className="flex justify-center text-md py-3 leading-8 text-gray-800 dark:text-gray-200">
+              <p className="flex justify-center text-md py-3 leading-8 text-gray-800 dark:text-gray-600">
                 A quick overview of my proficiency in a range of programming
                 languages, frameworks, and technologies.
               </p>
@@ -331,8 +339,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
             <section>
-
-              <GitHubRepoWidget/>
+              <GitHubRepoWidget />
             </section>
           </div>
         </section>
