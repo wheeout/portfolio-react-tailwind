@@ -35,14 +35,14 @@ export default function Home() {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href =
-      "/https://drive.google.com/uc?export=download&id=1Jcc07tucfy5ymctEYuEjy6rXDdmmIY9E";
-    link.download = "Curriculum Mia - 2023 (English).pdf";
+      "https://drive.google.com/uc?export=download&id=1lq3nIQsOxhMiBzarpcWh4iBB0sdzb81r";
+    link.download = "Curriculum Matheus - 2023 (English).pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
   const linkedinLink = () => {
-    window.open("https://www.linkedin.com/", "_blank");
+    window.open("https://www.linkedin.com/in/abreuelimamatheus/", "_blank");
   };
 
   return (
@@ -74,7 +74,7 @@ export default function Home() {
           </nav>
           <div className="text-center p-10 py-10">
             <h2 className="text-5xl py-2 text-purple-300 font-bebas dark:text-purple-300 md:text-6xl">
-              MIA ABREU E LIMA
+              MATHEUS ABREU E LIMA
             </h2>
             <h3 className="text-2xl py-2 font-bold dark:text-white md:text-3xl">
               Software Engineer
