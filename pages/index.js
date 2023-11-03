@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
-        <title>Mia&apos;s Portfolio</title>
+        <title>Matheus&apos; Portfolio</title>
         <link rel="icon" href="/wheeout_icon.ico" />
       </Head>
       <main className=" bg-pink-50 px-10 dark:bg-gray-600 md:px-20 lg:px-40">
